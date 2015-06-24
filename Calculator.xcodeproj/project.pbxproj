@@ -13,6 +13,7 @@
 		B0C0647D1B2D0FD60026458A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0C0647C1B2D0FD60026458A /* Images.xcassets */; };
 		B0C064801B2D0FD60026458A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0C0647E1B2D0FD60026458A /* LaunchScreen.xib */; };
 		B0C0648C1B2D0FD60026458A /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C0648B1B2D0FD60026458A /* CalculatorTests.swift */; };
+		B0C064961B3A65040026458A /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C064951B3A65040026458A /* CalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		B0C064851B2D0FD60026458A /* CalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C0648A1B2D0FD60026458A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0C0648B1B2D0FD60026458A /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		B0C064951B3A65040026458A /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				B0C064771B2D0FD60026458A /* ViewController.swift */,
 				B0C064791B2D0FD60026458A /* Main.storyboard */,
 				B0C064731B2D0FD60026458A /* Supporting Files */,
+				B0C064951B3A65040026458A /* CalculatorBrain.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C064961B3A65040026458A /* CalculatorBrain.swift in Sources */,
 				B0C064781B2D0FD60026458A /* ViewController.swift in Sources */,
 				B0C064761B2D0FD60026458A /* AppDelegate.swift in Sources */,
 			);
