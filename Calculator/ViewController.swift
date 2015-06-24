@@ -15,6 +15,8 @@ class ViewController: UIViewController
     @IBOutlet weak var display: UILabel!
     
     var userIsEditing :Bool = false
+    var brain =  CalculatorBrain()
+    
 
     @IBAction func appendDigit(sender: UIButton)
     {
@@ -30,51 +32,38 @@ class ViewController: UIViewController
         
     }
     
-    var operandStack =  Array<Double>()
+    
     
     @IBAction func Enter() {
         userIsEditing = false
-        operandStack.append(DisplayText)
-        println("OperandStack = \(operandStack)")
+        if let result =  brain.pushOperand(DisplayText) {
+            DisplayText = result
+        } else
+        {
+            DisplayText = 0
+        }
         
     }
     
     
     @IBAction func Operate(sender: UIButton) {
-        let operation = sender.currentTitle!
+        
         if userIsEditing {
             Enter()
         }
-        switch operation
-        {
-        case "➗": performOperation {$0 / $1}
-        case "✖️": performOperation {$0 * $1}
-        case "➖": performOperation {$0 - $1}
-        case "➕": performOperation {$0 + $1}
-        case "√" : performOperation {sqrt($0) }
-        default: break
-            
+        
+        if let operation = sender.currentTitle {
+            if let result = brain.performOperation(operation) {
+                DisplayText = result
+            } else
+            {
+                DisplayText = 0
+            }
         }
+        
     }
     
-    // Using functional programming clojure concept to pass expressions/functions as parameters
-    func performOperation(operation:(Double,Double) -> Double)
-    {
-        if operandStack.count > 1
-        {
-            DisplayText = operation (operandStack.removeLast() , operandStack.removeLast())
-            Enter()
-        }
-    }
-
-    func performOperation(operation:Double -> Double)
-    {
-        if operandStack.count > 0
-        {
-            DisplayText = operation (operandStack.removeLast())
-            Enter()
-        }
-    }
+    
     
     var DisplayText : Double
     {
